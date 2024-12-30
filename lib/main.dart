@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
-import 'app.dart';
+import 'screens/onboarding_screen.dart';
+// import 'services/notification_service.dart';
+// import 'package:permission_handler/permission_handler.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // NotificationHelper.init();
+  // await Permission.notification.isDenied.then((value) async {
+  //   if (value) {
+  //     await Permission.notification.request();
+  //   }
+  // });
   runApp(MyApp());
 }
 
@@ -13,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MainNavigation(),
+      home: OnboardingScreenManager(),
     );
   }
 }
